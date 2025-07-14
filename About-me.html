@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   
+     <style>
+     
+     body {
+       margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color:#f4f4f4 ;
+      color: #222;
+      font-size: 20px;
+     }
+     
+     .back-arrow {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 32px;
+      z-index: 1000;
+      }
+
+     .back-arrow img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+     }
+
+     header {
+      background-color:#0d0d0d ;
+      color: white;
+      padding: 20px;
+      text-align: center;
+     }
+
+     .head {
+      text-align: center;
+      font-size: 36px;
+     }
+
+
+     #openMenu,#closeMenu{
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      margin: 15px;
+      z-index: 1001;
+      position: fixed;
+     }
+
+     #openMenu{
+      top: 0;
+      right: 0;
+     }
+
+     #closeMenu{
+      top: 15px;
+      left: 15px;
+      position: absolute;
+     }
+
+     #sidebar{
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      background-color: #111;
+      color: white;
+      transition: 0.3s ease;
+      z-index: 1000;
+      padding-top: 60px;
+     }
+
+     #sidebar ul{
+      list-style-type: none;
+      padding: 0;
+     }
+
+     #sidebar ul li{
+      padding: 15px 20px;
+      border-bottom: 1px solid #444;
+     }
+
+     #sidebar ul li a{
+      color: white;
+      text-decoration: none;
+     }
+
+     main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+     }
+
+     .profile {
+        max-width: 800px;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+     }
+
+     .profile img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 20px;
+     }
+
+     .profile h2 {
+        text-align: center;
+        margin-bottom: 10px;
+     }
+
+     .profile p {
+        line-height: 1.6;
+        text-align: justify;
+     }
+
+     footer {
+        background-color: #0d0d0d;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        font-size: 20px;
+     }
+
+     @media(max-width: 600px){
+     #sidebar{
+     width: 200px;
+     }
+     }
+     @media(max-width: 600px) {
+     .profile{
+        padding: 15px;
+     }
+     .profile h2 {
+        font-size: 24px;
+     }
+     .profile p {
+        font-size: 18px;
+     }
+     }
+            
+     </style>
+
+ </head>
+
+ <body>
+
+      <a href="Home.html" class="back-arrow">
+     <img src="images/photo-4.png" width="30" alt="Back"></a>
+
+     <head>
+        <h1 class="head">About Me</h1>
+     </head>
+    
+     <img src="images/photo-1.png" width="20" id="openMenu" onclick="toggleSidebar()" alt="openMenu">
+     <div id="sidebar">
+     <img src="images/photo-2.png" id="closeMenu" onclick="toggleSidebar()" alt="closeMenu">
+     <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="#">About me</a></li>
+      <li><a href="Service.html">Services</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+     </ul> 
+     </div>
+
+     
+            
+     <script>
+
+     function toggleSidebar(){
+     const sidebar = document.getElementById('sidebar');
+     const openMenu = document.getElementById('openMenu');
+     const closeMenu = document.getElementById('closeMenu');
+     if (sidebar.style.right === '0px') {
+     sidebar.style.right = '-250px';
+     openMenu.style.display = 'block';
+     }
+     else {
+     sidebar.style.right = '0px';
+     openMenu.style.display = 'none';
+     }
+     }
+  
+     </script>
+
+     <main>
+     <section class="profile">
+     <img src="images/photo-3.png" alt="profile picture">
+     <h2>My Name is Okpochini Stanley</h2>
+     <p>I'm a passionate tech content creator on YouTube, where i share insight about the latest
+     in software, gadget, and web development tips.with my years of experience in tech blogging,</p>
+     <p>I simplify complex topic to help beginners and experts alike grow in their digital journey.</p>
+     <p>Aside from YouTube, I'm also active on Telegram, where i run a punting community focused on 
+     smart sports betting strategies.</p> <p>My aim is to help people make informed decisions using data
+     and trends in sports analysis.</p>
+     <p>I'm constantly exploring new technologies and digital trends, and i enjoy building modern
+     responsive websites that work perfectly on all devices.</p>
+     </section>
+     </main>
+
+     <footer>
+      &copy; 2025 My Online Enterpreneurship | All Right Reserve
+     </footer>
+  
+ </body>
+
+
+
+</html>

@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   
+   <style>
+     
+     body{
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f9f9f9;
+      color: #333;
+      font-size: 22px;
+     }
+
+     .back-arrow {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 32px;
+      z-index: 1000;
+      }
+
+     .back-arrow img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+     }
+
+     header {
+      background-color: #0d0d0d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+     }
+     
+     .head{
+      text-align: center;
+     }
+
+     #openMenu,#closeMenu{
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      margin: 15px;
+      z-index: 1001;
+      position: fixed;
+     }
+
+     #openMenu{
+      top: 0;
+      right: 0;
+     }
+
+     #closeMenu{
+      top: 15px;
+      left: 15px;
+      position: absolute;
+     }
+
+     #sidebar{
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      background-color: #111;
+      color: white;
+      transition: 0.3s ease;
+      z-index: 1000;
+      padding-top: 60px;
+     }
+
+     #sidebar ul{
+      list-style-type: none;
+      padding: 0;
+     }
+
+     #sidebar ul li{
+      padding: 15px 20px;
+      border-bottom: 1px solid #444;
+     }
+
+     #sidebar ul li a{
+      color: white;
+      text-decoration: none;
+     }
+
+      main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+     }
+
+     .contact-container {
+      background-color: #fff;
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+     }
+
+     .contact-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+     }
+
+     .contact-infro {
+      margin-bottom: 20px;
+      text-align: center;
+     }
+
+     .contact-infro p {
+      margin: 10px 0;
+      font-size: 16px;
+     }
+
+     form {
+      display: flex;
+      flex-direction: column;
+     }
+
+     input,
+     textarea {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      resize: vertical;
+     }
+
+     button {
+      background-color: #0d0d0d;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: backgound 0,3s ease                                                                                ;
+     }
+
+     button:hover {
+      background-color: #333;
+     }
+
+     footer{
+      background-color: #0d0d0d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+     }
+
+     @media(max-width: 600px){
+      #sidebar{
+        width: 200px;
+      }
+     }
+
+     @media(max-width: 600px) {
+      .contact-container {
+        padding: 15px;
+      }
+      
+     .contact-infro p {
+      font-size: 14px;
+     }
+
+     input,
+     textarea {
+      font-size: 14px;
+     }
+      button {
+      font-size: 15px;
+     }
+     }
+            
+   </style>
+
+ </head>
+
+ <body>
+
+     <a href="Home.html" class="back-arrow">
+     <img src="images/photo-4.png" width="30" alt="Back"></a>
+
+     <head>
+      <h1 class="head">Contact Me</h1>
+     </head>
+    
+     <img src="images/photo-1.png" width="20" id="openMenu" onclick="toggleSidebar()" alt="openMenu">
+     <div id="sidebar">
+     <img src="images/photo-2.png" id="closeMenu" onclick="toggleSidebar()" alt="closeMenu">
+     <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="About-me.html">About me</a></li>
+      <li><a href="Service.html">Services</a></li>
+      <li><a href="#">Contact</a></li>
+     </ul> 
+     </div>
+
+   <script>
+
+     function toggleSidebar(){
+     const sidebar = document.getElementById('sidebar');
+     const openMenu = document.getElementById('openMenu');
+     const closeMenu = document.getElementById('closeMenu');
+     if (sidebar.style.right === '0px') {
+     sidebar.style.right = '-250px';
+     openMenu.style.display = 'block';
+     }
+     else {
+     sidebar.style.right = '0px';
+     openMenu.style.display = 'none';
+     }
+     }
+  
+   </script>
+
+     <main>
+     <section class="contact-container">
+     <h2>Let's Talk</h2>
+
+     <div class="contact-infro">
+     <p><strong>Email</strong>: okpochinistanley21@gmail.com</p>
+     <p><strong>YouTube</strong> @okpochinistanley</p>
+     <p><strong>Telegram</strong> @spiritualpuntenterpreneurship</p>
+     </div>
+
+     <form action="#" method="post">
+     <input type="text" name="name" placeholder="Your Name" required/>
+     <input type="email" name="email" placeholder="Your Email" required/>
+     <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+     <button type="submit">Send Message</button>
+     </form>
+     </section>
+     </main>
+
+     <footer>
+      &copy; 2025 My Online Enterprenuership | All Right Reserved
+     </footer>
+  
+ </body>
+
+</html>

@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+   <style>
+
+     *{box-sizing: border-box;
+      margin: 0;
+      padding: o;
+      }
+     
+     body{
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f4f4f4;
+      color: #333;
+     }
+
+     .back-arrow {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 32px;
+      z-index: 1000;
+      }
+
+     .back-arrow img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+     }
+
+     header {
+      background-color: burlywood;
+      color: #444;
+      text-align: center;
+      padding: 60px 20px 30px;
+     }
+
+     header h1 {
+      font-size: 33px;
+      margin-bottom: 10px;
+     }
+
+     header p {
+      font-size: 24px;
+      color: #444;
+     }
+
+      a {
+        color: blueviolet;
+        font-size: 20px;
+      } 
+     
+     #openMenu,#closeMenu{
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      margin: 15px;
+      z-index: 1001;
+      position: fixed;
+     }
+
+     #openMenu{
+      top: 0;
+      right: 0;
+     }
+
+     #closeMenu{
+      top: 15px;
+      left: 15px;
+      position: absolute;
+     }
+
+     #sidebar{
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      right: -250px;
+      background-color: #111;
+      color: white;
+      transition: 0.3s ease;
+      z-index: 1000;
+      padding-top: 60px;
+     }
+
+     #sidebar ul{
+      list-style-type: none;
+      padding: 0;
+     }
+
+     #sidebar ul li{
+      padding: 15px 20px;
+      border-bottom: 1px solid #444;
+     }
+
+     #sidebar ul li a{
+      color: white;
+      text-decoration: none;
+     }
+
+     .section-tittle {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 22px;
+      color: #444;
+     }
+
+     .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+     }
+
+     .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+     }
+
+     footer {
+      background-color: burlywood;
+      color: #444;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 22px;
+     }
+
+     @media(max-width: 600px){
+      #sidebar{
+     width: 200px;
+     }
+     header h1 {
+     font-size: 25px;
+     }
+     .section-tittle{
+      font-size: 18px;
+     }
+     .back-arrow{
+      width: 28px;
+      top: 10px;
+      left: 10x;
+     }
+     }
+
+     @media(max-width: 400px) {
+      .image-grid { 
+      grid-template-columns: repeat(auto-fit,minmax(120px, 1fr));
+      }
+      header p {
+      font-size: 18px;
+      }
+      }
+            
+   </style>
+
+ </head>
+
+ <body>
+     <a href="Home.html" class="back-arrow">
+     <img src="images/photo-4.png" width="30" alt="Back"></a>
+
+     <header>
+      <h1>Welcome To My Online Enterprenuership Services Web Page</h1>
+      <br>
+      <hr>
+      <br>
+      <p>My Services Are YouTube Tech Blogging,Telegram Sport Prediction,Affilate Marketting and AI Kids Animations</p>
+      <p>Click On The Link Below To Access My Services</p>
+      <br>
+      <p><a href="https://youtube.com/@okpochinistanley?si=N1JwkjEmfqVhZqrrH6">YouTube Channel</a></p>
+      <p><a href="https://t.me/spiritualpuntenterpreneurship">Telegram Channel</a></p>
+      <p><a href="https://selar.com/p/1pi3?affiliate=kkiu">How To Make Perfume</a></p>
+      <p><a href="https://selar.com/m/chinaza-esther939015?affillate=ddo8">Selar Product</a></p>
+      <p><a href="https://selar.com/p/ryiq?affilliate=8wp8">Soap Making</a></p>
+      <p><a href="https://selar.com/p/612o76?affilliate=89y1">Full Stack Web Development</a></p>
+      <p><a href="https://selar.com/p/486z27?affilliate=qhyu">Cpl Marketing Course</a></p>
+      <p><a href="https://selar.com/p/5bm1q9?affilliate=8n4k">Loss of Weight course</a></p>
+      <p><a href="https://selar.com/p/5zco5j?affilliate=lzjt">Complete Cybersecurity Course</a></p>
+      <p><a href="https://selar.com/m/bytebazaar?affilliate=jt3p">Selar Product</a></p>
+      <p><a href="https://selar.com/p/14vc?affiliate=uuug">2D Animation Course</a></p>
+      <p><a href="https://selar.com/m/skoolbydeca?affilliate=24oq">Selar Product</a></p>
+      <p><a href="https://Nocode100.selar.com/?affilliate=4xkl">Selar Produt</a></p>
+     </header>
+
+     <img src="images/photo-1.png" width="20" id="openMenu" onclick="toggleSidebar()" alt="openMenu">
+     <div id="sidebar">
+     <img src="images/photo-2.png" id="closeMenu" onclick="toggleSidebar()" alt="closeMenu">
+     <ul>
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="About-me.html">About me</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+     </ul> 
+     </div>
+
+     <script>
+
+      function toggleSidebar(){
+      const sidebar = document.getElementById('sidebar');
+      const openMenu = document.getElementById('openMenu');
+      const closeMenu = document.getElementById('closeMenu');
+      if (sidebar.style.right === '0px') {
+      sidebar.style.right = '-250px';
+      openMenu.style.display = 'block';
+      }
+      else {
+      sidebar.style.right = '0px';
+      openMenu.style.display = 'none';
+      }
+      }
+  
+     </script>
+
+     <div class="section-tittle"></div>
+     <div class="image-grid">
+      <img src="images/photo-3.png" width="250" alt="">
+      <img src="images/photo-5.png" width="250" alt="">
+      <img src="images/photo-6.png" width="250" alt="">
+      <img src="images/photo-7.png" width="250" alt="">
+      <img src="images/photo-8.jpeg" width="480" alt="">
+      <img src="images/photo-9.jpeg" width="480" alt="">
+      <img src="images/photo-10.jpg" width="480" alt="">
+      <img src="images/photo-13.jpg" width="480" alt="">
+      <img src="images/photo-14.jpg" width="480" alt="">
+      <img src="images/photo-17.jpeg" width="480" alt="">
+      <img src="images/photo-15.jpg" width="480" alt="">
+      <img src="images/photo-16.png" width="480" alt="">
+      <img src="images/photo=11.jpg" width="480" alt="">
+      <img src="images/photo-12.jpg" width="480" alt="">
+      <img src="images/photo-18.jpg" width="480" alt="">
+      <img src="images/photo-19.jpg" width="480" alt="">
+      <img src="images/photo-20.jpg" width="480" alt="">
+      <img src="images/photo-21.jpg" width="480" alt="">
+     </div>
+
+     <footer>
+
+      &copy; 2025 My OnLine Enterprenuership Services.
+      All right reserved.
+
+     </footer>
+
+  
+ </body>
+
+
+
+</html>

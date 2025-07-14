@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+        
+     <style>
+
+            *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            
+            body{
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f79ffb;
+            color: #222;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            }
+
+            header {
+            background-color: blueviolet;
+            color: white;
+            padding: 20px;text-align: center;
+            }
+
+            header h1 {
+            font-size: 33px;
+            }
+
+            header p {
+            font-size: 24px;
+            margin-top: 5px;
+            color: #ccc;
+            }
+
+            .logo {
+            color: white;
+            font-size: 33px;
+            font-weight: bold;
+            }
+            
+            #openMenu,#closeMenu{
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            margin: 15px;
+            z-index: 1001;
+            position: fixed;
+            }
+
+            #openMenu{
+            top: 0;
+            right: 0;
+            }
+
+            #closeMenu{
+            top: 15px;
+            left: 15px;
+            position: absolute;
+            }
+
+            #sidebar{
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: -250px;
+            background-color: #111;
+            color: white;
+            transition: 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+            }
+
+            #sidebar ul{
+            list-style-type: none;
+            padding: 0;
+            }
+
+            #sidebar ul li{
+            padding: 15px 20px;
+            border-bottom: 1px solid #444;
+            }
+
+            #sidebar ul li a{
+            color: white;
+            text-decoration: none;
+            }
+
+            main {
+            flex: 1;
+            padding : 40px 20px;
+            text-align: center;
+            }
+
+            .hero-section {
+            max-width: 700px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .hero-section h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #555;
+            }
+
+            .get-started-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: blueviolet;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            }
+
+            .get-started-btn hover {
+            background-color: #005fa3;
+            }
+
+
+            footer {
+            background-color: #1f2937;
+            color: #ccc;
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 22px;
+            }
+
+            @media(max-width: 600px){
+            #sidebar{
+            width: 200px;
+            }
+            header h1{
+            font-size: 24px;
+            }
+            .hero-section h2 {
+            font-size: 20px;
+            }
+            .hero-section p {
+            font-size: 18px;
+            }
+            .get-started-btn {
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            }
+            main {
+            padding: 30px 15px;
+            }
+
+            }
+            
+     </style>
+
+ </head>
+
+ <body>
+            <header>
+            <div class="logo">OKS HOME PAGE</div>
+            <h1>Welcome to my Online Enterpreneurship Home Page</h1>
+            <p>Tech blogging on YouTube & Smart punting on Telegram</p>
+        
+            <img src="images/photo-1.png" width="20" id="openMenu" onclick="toggleSidebar()" alt="openMenu">
+            <div id="sidebar">
+            <img src="images/photo-2.png" id="closeMenu" onclick="toggleSidebar()" alt="closeMenu">
+            <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="About-me.html">About me</a></li>
+            <li><a href="Service.html">Services</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            </ul> 
+            </div>
+
+     <script>
+
+            function toggleSidebar(){
+            const sidebar = document.getElementById('sidebar');
+            const openMenu = document.getElementById('openMenu');
+            const closeMenu = document.getElementById('closeMenu');
+            if (sidebar.style.right === '0px') {
+            sidebar.style.right = '-250px';
+            openMenu.style.display = 'block';
+            }
+            else {
+            sidebar.style.right = '0px';
+            openMenu.style.display = 'none';
+            }
+            }
+        
+     </script>
+
+     </header>
+
+            <main>
+            <div class="hero-section">
+            <h2>Your Gateway to Innovation and Winning Tips</h2>
+            <p>Join me on YouTube for tech tutorials & on my Telegram for sport predictions</p>
+            <a href="#" class="get-started-btn" onclick="goToService()">Get Started</a>
+            </div>
+            </main>
+
+     <script>
+
+            function goToService() {
+            if(true) {
+            window.location.href = "Service.html";
+            }
+            }
+
+     </script>
+
+            <footer>
+            &copy; 2025 My Online Enterprenuership | All Rights Reserved
+            </footer>
+  
+ </body>
+
+
+
+</html>
